@@ -23,9 +23,9 @@ io.on("connection", (socket: Socket) => {
 
   // Sending a message to a specific room
   socket.on(
-    "chat message",
+    "room message",
     ({ room, message }: { room: string; message: string }) => {
-      io.to(room).emit("chat message", message);
+      io.to(room).emit("room message", message);
     }
   );
 
